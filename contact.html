@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sauntera — Contact Us</title>
+  <style>
+    :root { --fg:#0f172a; --muted:#475569; --brand:#0ea5e9; --bg:#ffffff; --card:#f8fafc; }
+    *{box-sizing:border-box} body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji;color:var(--fg);background:var(--bg);line-height:1.6}
+    header{padding:32px 20px;background:linear-gradient(180deg, #e0f2fe, #ffffff)}
+    .container{max-width:900px;margin:0 auto;padding:0 20px}
+    h1{margin:0 0 8px 0;font-size:clamp(24px,3vw,36px)}
+    p,li{font-size:16px;color:var(--fg)}
+    .muted{color:var(--muted)}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    footer{margin:40px 0 60px;color:var(--muted)}
+
+    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:16px;padding:24px;margin:24px 0}
+    .form-group{margin-bottom:16px}
+    .form-group label{display:block;font-weight:600;margin-bottom:6px;font-size:14px;color:var(--fg)}
+    .form-group input,
+    .form-group textarea{
+      width:100%;padding:10px 14px;border:1px solid #cbd5e1;border-radius:10px;
+      font-size:15px;font-family:inherit;color:var(--fg);background:#fff;
+      transition:border-color .2s
+    }
+    .form-group input:focus,
+    .form-group textarea:focus{outline:none;border-color:var(--brand)}
+    .form-group textarea{resize:vertical;min-height:120px}
+    .submit-btn{
+      display:inline-block;padding:12px 32px;background:var(--brand);color:#fff;
+      border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;
+      transition:background .2s
+    }
+    .submit-btn:hover{background:#0284c7}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="muted">We'd love to hear from you. Send us a message and we'll get back to you as soon as we can.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <form action="/api/contact" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" name="_subject" id="subject" placeholder="What is this about?" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" placeholder="Your message…" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+
+    <hr />
+    <p><a href="index.html">&larr; Back to Home</a></p>
+    <footer>
+      <p>&copy; <span id="year"></span> Sauntera Technologies Inc.</p>
+      <p>
+        <a href="index.html">Home</a> &nbsp;&bull;&nbsp;
+        <a href="terms.html">Terms</a> &nbsp;&bull;&nbsp;
+        <a href="privacy.html">Privacy</a>
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

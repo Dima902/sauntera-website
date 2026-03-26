@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sauntera — Request Account & Data Deletion</title>
+  <style>
+    :root { --fg:#0f172a; --muted:#475569; --brand:#0ea5e9; --bg:#ffffff; --card:#f8fafc; }
+    *{box-sizing:border-box} body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji;color:var(--fg);background:var(--bg);line-height:1.6}
+    header{padding:32px 20px;background:linear-gradient(180deg, #e0f2fe, #ffffff)}
+    .container{max-width:900px;margin:0 auto;padding:0 20px}
+    h1{margin:0 0 8px 0;font-size:clamp(24px,3vw,36px)}
+    h2{margin-top:32px;font-size:clamp(20px,2.4vw,28px)}
+    p,li{font-size:16px;color:var(--fg)}
+    .muted{color:var(--muted)}
+    .card{background:var(--card);border:1px solid #e2e8f0;border-radius:16px;padding:20px;margin:16px 0}
+    code, .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    footer{margin:40px 0 60px;color:var(--muted)}
+    .steps li{margin:8px 0}
+    .badge{display:inline-block;padding:2px 8px;border-radius:9999px;background:#e0f2fe;color:#0369a1;font-size:12px;font-weight:600;margin-left:8px}
+    .kbd{display:inline-block;padding:2px 6px;border:1px solid #cbd5e1;border-bottom-width:2px;border-radius:6px;background:#fff;font-size:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Request Account & Data Deletion</h1>
+      <p class="muted">For the mobile app <strong>Sauntera</strong> by <strong>Sauntera Technologies Inc.</strong></p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <p>
+        This page explains how you can delete your Sauntera account and associated data. You can request deletion
+        <strong>in the app</strong> (recommended) or <strong>from this webpage</strong> if you no longer have access to the app or device.
+      </p>
+      <p class="muted">Deleting your account is permanent and cannot be undone.</p>
+    </div>
+
+    <h2>Delete your account <span class="badge">In the app</span></h2>
+    <ol class="steps">
+      <li>Open the Sauntera app and make sure you’re signed in.</li>
+      <li>Go to <span class="kbd">Profile</span> → <span class="kbd">Settings</span> → <span class="kbd">Account</span>.</li>
+      <li>Tap <span class="kbd">Delete account</span> and follow the on-screen confirmation steps.</li>
+    </ol>
+    <p class="muted">If you don’t see this option, you can request deletion from this page instead.</p>
+
+    <h2>Request deletion <span class="badge">From this page</span></h2>
+    <div class="card">
+      <p>Send us a deletion request via email using one of the options below:</p>
+      <ul>
+        <li>
+          Click this link to start an email to our support team (you can edit before sending):<br/>
+          <a class="mono" href="mailto:support@sauntera.com?subject=Delete%20my%20Sauntera%20account&body=Please%20delete%20my%20Sauntera%20account%20and%20all%20associated%20data.%0A%0AMy%20account%20phone%20number%3A%20%2B1_____________%0AMy%20display%20name%20(in%20app)%3A%20_____________%0A%0AI%20understand%20this%20action%20is%20irreversible.">support@sauntera.com</a>
+        </li>
+        <li>Or email us at <span class="mono">support@sauntera.com</span> with the subject “Delete my Sauntera account” from the same email/phone you use in the app.</li>
+      </ul>
+      <p><strong>Identity verification:</strong> We may ask you to verify your request (for example, by replying from the same email, confirming the phone number on the account, or completing a one-time code challenge) to protect your data.</p>
+    </div>
+
+    <h2>What will be deleted?</h2>
+    <ul>
+      <li>Your Sauntera <strong>account</strong> (Firebase Auth user)</li>
+      <li>Profile data (e.g., name, avatar)</li>
+      <li>Favorites / saved ideas and lists</li>
+      <li>In-app preferences and settings (e.g., filters, location choices)</li>
+      <li>Identifiers we store for app functionality (e.g., Firebase Installation ID)</li>
+    </ul>
+
+    <h2>What may be retained and why?</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Purchase records and refund logs</strong> (Google Play Billing data, receipts, and anti-fraud records) — retained for <strong>up to 7 years</strong> as required by tax, accounting, and fraud-prevention laws.</li>
+        <li><strong>Aggregated, non-identifiable analytics</strong> (if any) — retained without personal identifiers, for product performance and safety.</li>
+        <li><strong>Legal holds</strong> — if we are required to retain certain information to comply with legal obligations, resolve disputes, or enforce agreements, we will keep only what is strictly necessary and for as long as required.</li>
+      </ul>
+    </div>
+
+    <h2>How long does it take?</h2>
+    <p>We begin processing immediately and aim to complete deletion within <strong>30 days</strong>. Some backups may take up to <strong>90 days</strong> to expire from our disaster-recovery systems. Records required for legal or fraud-prevention purposes may be retained as noted above.</p>
+
+    <h2>Can I download my data first?</h2>
+    <p>If you’d like an export (e.g., saved ideas), mention this in your request and we’ll assist where feasible before deletion.</p>
+
+    <h2>Contact</h2>
+    <p>Support: <a href="mailto:support@sauntera.com">support@sauntera.com</a></p>
+    <p>Privacy Policy: <a href="https://sauntera.com/privacy">https://sauntera.com/privacy</a></p>
+
+    <hr />
+    <p><a href="index.html">← Back to Home</a></p>
+    <footer>
+      <p>© <span id="year"></span> Sauntera Technologies Inc. Last updated: <span id="updated"></span></p>
+      <p>
+        <a href="index.html">Home</a> &nbsp;•&nbsp;
+        <a href="terms.html">Terms</a> &nbsp;•&nbsp;
+        <a href="privacy.html">Privacy</a>
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    (function(){
+      const d = new Date();
+      document.getElementById('year').textContent = d.getFullYear();
+      document.getElementById('updated').textContent = d.toISOString().slice(0,10);
+    })();
+  </script>
+</body>
+</html>
