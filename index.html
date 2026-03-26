@@ -28,14 +28,14 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="background.webp" type="image/webp" fetchpriority="high">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #0C0907; --card: #161008; --amber: #D4922A; --amber2: #F0B860;
       --cream: #F2EAD8; --muted: #9A8C7A; --terra: #B05A35;
-      --serif: 'Cormorant Garamond', Georgia, serif;
+      --serif: 'Inter', 'DM Sans', sans-serif;
       --sans: 'DM Sans', sans-serif; --radius: 18px;
     }
     html { scroll-behavior: smooth; }
@@ -46,7 +46,7 @@
 
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; background: rgba(12,9,7,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-    .nav-logo { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; letter-spacing: .12em; color: var(--cream); text-decoration: none; }
+    .nav-logo { font-family: var(--serif); font-size: 1.5rem; font-weight: 500; letter-spacing: .12em; color: var(--cream); text-decoration: none; }
     .nav-logo span { color: var(--amber); }
     .nav-cta { background: var(--amber); color: #0C0907; font-weight: 500; font-size: .95rem; letter-spacing: .08em; text-transform: uppercase; padding: 10px 22px; border-radius: 50px; text-decoration: none; transition: background .25s, transform .2s; }
     .nav-cta:hover { background: var(--amber2); transform: translateY(-1px); }
@@ -57,7 +57,7 @@
     .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,9,7,1) 0%, rgba(12,9,7,.65) 40%, rgba(12,9,7,.2) 75%, transparent 100%); }
     .hero-content { position: relative; z-index: 2; padding: 0 72px 80px; max-width: 700px; }
     .hero-tag { display: inline-block; font-size: .72rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--amber); margin-bottom: 20px; opacity: 0; animation: fadeUp .8s .3s forwards; }
-    .hero-h1 { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--cream); margin-bottom: 20px; opacity: 0; animation: fadeUp .9s .5s forwards; }
+    .hero-h1 { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 500; line-height: 1.05; color: var(--cream); margin-bottom: 20px; opacity: 0; animation: fadeUp .9s .5s forwards; }
     .hero-h1 em { font-style: italic; color: var(--amber2); }
     .hero-sub { font-size: 1.05rem; font-weight: 300; color: rgba(242,234,216,.7); max-width: 460px; margin-bottom: 36px; opacity: 0; animation: fadeUp .9s .7s forwards; }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; opacity: 0; animation: fadeUp .9s .9s forwards; }
@@ -72,7 +72,7 @@
     /* SHARED */
     section { padding: 100px 72px; scroll-margin-top: 72px; }
     .section-label { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
-    .section-h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 300; line-height: 1.1; color: var(--cream); margin-bottom: 16px; }
+    .section-h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.4rem); font-weight: 500; line-height: 1.1; color: var(--cream); margin-bottom: 16px; }
     .section-h2 em { font-style: italic; color: var(--amber2); }
     .section-sub { font-size: 1rem; font-weight: 300; color: var(--muted); max-width: 500px; line-height: 1.7; }
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
@@ -87,7 +87,7 @@
     .vibe-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,9,7,.85) 0%, transparent 55%); }
     .vibe-card-body { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; }
     .vibe-tag { display: inline-block; background: rgba(212,146,42,.18); border: 1px solid rgba(212,146,42,.4); color: var(--amber2); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; padding: 5px 12px; border-radius: 50px; margin-bottom: 10px; }
-    .vibe-card-body h3 { font-family: var(--serif); font-size: 1.45rem; font-weight: 300; line-height: 1.2; color: var(--cream); }
+    .vibe-card-body h3 { font-family: var(--serif); font-size: 1.45rem; font-weight: 500; line-height: 1.2; color: var(--cream); }
 
     /* HOW IT WORKS */
     #how { background: linear-gradient(160deg, #100B07 0%, #0C0907 100%); position: relative; overflow: hidden; }
@@ -96,7 +96,7 @@
     .how-steps { display: flex; flex-direction: column; gap: 40px; }
     .how-step { display: flex; gap: 24px; align-items: flex-start; }
     .step-num { flex-shrink: 0; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(212,146,42,.35); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.2rem; color: var(--amber); }
-    .step-text h4 { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--cream); margin-bottom: 6px; }
+    .step-text h4 { font-family: var(--serif); font-size: 1.35rem; font-weight: 500; color: var(--cream); margin-bottom: 6px; }
     .step-text p { font-size: .9rem; font-weight: 300; color: var(--muted); line-height: 1.7; }
 
     /* Phone mockup */
@@ -123,7 +123,7 @@
     .psych-card:hover { border-color: rgba(212,146,42,.3); transform: translateY(-4px); }
     .psych-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(212,146,42,.4), transparent); }
     .psych-icon { font-size: 1.8rem; margin-bottom: 20px; display: block; }
-    .psych-card h3 { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; color: var(--cream); margin-bottom: 12px; line-height: 1.2; }
+    .psych-card h3 { font-family: var(--serif); font-size: 1.6rem; font-weight: 500; color: var(--cream); margin-bottom: 12px; line-height: 1.2; }
     .psych-card p { font-size: .9rem; font-weight: 300; color: var(--muted); line-height: 1.75; }
     .psych-pill { display: inline-block; margin-top: 20px; background: rgba(212,146,42,.1); border: 1px solid rgba(212,146,42,.25); color: var(--amber2); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; padding: 6px 14px; border-radius: 50px; }
 
@@ -131,7 +131,7 @@
     #proof { background: var(--bg); text-align: center; }
     .proof-inner { max-width: 700px; margin: 0 auto; }
     .proof-stats { display: flex; justify-content: center; gap: 60px; margin: 52px 0; flex-wrap: wrap; }
-    .proof-num { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 300; color: var(--amber2); line-height: 1; }
+    .proof-num { font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 600; color: var(--amber2); line-height: 1; }
     .proof-num-label { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
     .proof-divider { width: 1px; height: 60px; background: rgba(212,146,42,.2); align-self: center; }
     .proof-cities { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
@@ -141,17 +141,17 @@
     /* URGENCY */
     #urgency { padding: 60px 72px; background: var(--bg); }
     .urgency-strip { background: linear-gradient(135deg, #1D1208, #160E06); border: 1px solid rgba(212,146,42,.2); border-radius: 20px; padding: 44px 60px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-    .urgency-text h3 { font-family: var(--serif); font-size: 1.9rem; font-weight: 300; color: var(--cream); margin-bottom: 8px; }
+    .urgency-text h3 { font-family: var(--serif); font-size: 1.9rem; font-weight: 500; color: var(--cream); margin-bottom: 8px; }
     .urgency-text p { font-size: .9rem; font-weight: 300; color: var(--muted); }
     .urgency-badge { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
-    .urgency-badge-num { font-family: var(--serif); font-size: 3rem; font-weight: 300; color: var(--amber); line-height: 1; }
+    .urgency-badge-num { font-family: var(--serif); font-size: 3rem; font-weight: 600; color: var(--amber); line-height: 1; }
     .urgency-badge-label { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 
     /* FINAL CTA */
     #cta { padding: 120px 72px; text-align: center; position: relative; overflow: hidden; }
     #cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(212,146,42,.09) 0%, transparent 70%); pointer-events: none; }
     .cta-inner { position: relative; max-width: 680px; margin: 0 auto; }
-    .cta-h2 { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.1; color: var(--cream); margin-bottom: 20px; }
+    .cta-h2 { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 500; line-height: 1.1; color: var(--cream); margin-bottom: 20px; }
     .cta-h2 em { font-style: italic; color: var(--amber2); }
     .cta-sub { font-size: 1rem; font-weight: 300; color: var(--muted); margin-bottom: 44px; line-height: 1.7; }
     .cta-store-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
@@ -162,7 +162,7 @@
 
     /* FOOTER */
     footer { padding: 40px 72px; border-top: 1px solid rgba(242,234,216,.06); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .footer-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 300; letter-spacing: .1em; color: var(--muted); }
+    .footer-logo { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; letter-spacing: .1em; color: var(--muted); }
     .footer-logo span { color: var(--amber); }
     .footer-links { display: flex; gap: 28px; }
     .footer-links a { font-size: .78rem; color: var(--muted); text-decoration: none; letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
