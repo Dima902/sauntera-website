@@ -1,0 +1,13 @@
+{
+  "name": "sauntera-functions",
+  "description": "Sauntera contact form handler",
+  "engines": {
+    "node": "20"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^13.6.1",
+    "firebase-functions": "^7.0.5",
+    "nodemailer": "^6.9.0"
+  }
+}

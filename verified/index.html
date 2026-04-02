@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sauntera — Email Verified</title>
+  <meta name="color-scheme" content="dark light" />
+  <link rel="icon" href="/app-icon.png">
+  <style>
+    :root {
+      --bg: #0f0f10;
+      --card: #17181b;
+      --text: #e9eef3;
+      --muted: #9aa7b2;
+      --accent: #7fe3b2;
+      --accent-ink: #0b2a1f;
+      --ring: #2aefb3;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fafc; --card: #ffffff; --text: #0f1720; --muted: #5b6b76;
+        --accent: #0ea5e9; --accent-ink: #031b2a; --ring: #38bdf8;
+      }
+    }
+    html, body { height: 100%; margin: 0; background: var(--bg); color: var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";}
+    .wrap { min-height: 100%; display: grid; place-items: center; padding: 24px; }
+    .card { width: 100%; max-width: 540px; background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.25);}
+    .logo { display:flex; align-items:center; gap:12px; margin-bottom: 8px;}
+    .logo .dot { width:14px; height:14px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px rgba(127,227,178,0.12);}
+    h1 { margin: 8px 0 10px; font-size: 26px; line-height:1.2; }
+    p  { margin: 8px 0; color: var(--muted); }
+    .btns { display:flex; gap:12px; flex-wrap: wrap; margin-top: 18px;}
+    .btn {
+      appearance: none; border: none; cursor: pointer;
+      padding: 12px 16px; border-radius: 12px; font-weight: 700;
+      background: var(--accent); color: var(--accent-ink);
+      box-shadow: 0 0 0 0 rgba(42,239,179,0.0);
+      transition: transform .08s ease, box-shadow .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 0 0 6px rgba(42,239,179,0.12); }
+    .btn.secondary { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,.14);}
+    .foot { margin-top: 18px; font-size: 13px; color: var(--muted); }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main class="card" role="main" aria-labelledby="title">
+      <div class="logo" aria-hidden="true">
+        <div class="dot"></div>
+        <strong>Sauntera</strong>
+      </div>
+      <h1 id="title">Your email is verified 🎉</h1>
+      <p>Thanks for confirming your address. You can return to the app now.</p>
+      <div class="btns">
+        <button class="btn" id="openApp">Open Sauntera</button>
+        <a class="btn secondary" href="/" aria-label="Go to Sauntera homepage">Go to website</a>
+      </div>
+      <div class="foot" id="details"></div>
+    </main>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const mode = params.get("mode");
+    const email = params.get("email");
+    const details = document.getElementById("details");
+    if (mode) details.textContent = `Mode: ${mode}${email ? " • " + email : ""}`;
+
+    // If your native app scheme differs, change here:
+    const APP_LINK = "myapp://verified";
+    document.getElementById("openApp").addEventListener("click", () => {
+      window.location.href = APP_LINK;
+      setTimeout(() => { window.location.href = "/"; }, 1200);
+    });
+  </script>
+</body>
+</html>
