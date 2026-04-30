@@ -206,6 +206,59 @@
     .footer-links a { font-size: .78rem; color: var(--muted); text-decoration: none; letter-spacing: .06em; text-transform: uppercase; transition: color .2s; }
     .footer-links a:hover { color: var(--cream); }
 
+    /* PLAN TEASER */
+    #plan-teaser { padding-top: 80px; padding-bottom: 80px; }
+    .plan-intro { text-align: center; max-width: 620px; margin: 0 auto 36px; }
+    .plan-city-chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border: 1px solid rgba(212,146,42,.4); border-radius: 50px; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); margin-bottom: 18px; }
+    .plan-city-chip::before { content: '●'; font-size: .55rem; color: var(--amber); }
+    .plan-intro .section-h2 { margin-bottom: 14px; }
+    .plan-intro .section-sub { margin: 0 auto; }
+
+    .plan-cta-wrap { text-align: center; margin-top: 36px; transition: opacity .35s ease, transform .35s ease, max-height .45s ease, margin .35s ease; max-height: 260px; overflow: hidden; }
+    .plan-cta-wrap.gone { opacity: 0; transform: translateY(-8px); max-height: 0; margin-top: 0; pointer-events: none; }
+    .plan-cta-btn { background: var(--amber); color: #0C0907; font-weight: 500; font-size: .98rem; letter-spacing: .06em; text-transform: uppercase; padding: 18px 36px; border-radius: 50px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 12px; transition: background .25s, transform .2s, box-shadow .3s; box-shadow: 0 10px 40px rgba(212,146,42,.18); }
+    .plan-cta-btn:hover { background: var(--amber2); transform: translateY(-2px); box-shadow: 0 14px 48px rgba(212,146,42,.28); }
+    .plan-cta-hint { font-size: .78rem; color: var(--muted); margin-top: 14px; letter-spacing: .04em; }
+
+    /* Loading pulse */
+    .plan-loading { display: none; flex-direction: column; align-items: center; gap: 14px; margin-top: 20px; }
+    .plan-loading.on { display: flex; }
+    .plan-loading-dots { display: flex; gap: 8px; }
+    .plan-loading-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--amber); opacity: .4; animation: loadingPulse 1.2s infinite ease-in-out; }
+    .plan-loading-dots span:nth-child(2) { animation-delay: .2s; }
+    .plan-loading-dots span:nth-child(3) { animation-delay: .4s; }
+    .plan-loading-label { font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    @keyframes loadingPulse { 0%, 100% { opacity: .4; transform: scale(1); } 50% { opacity: 1; transform: scale(1.35); } }
+
+    /* Results container — hidden until plan is "generated" */
+    .plan-results { display: none; opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .plan-results.on { display: block; opacity: 1; transform: none; }
+
+    .plan-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .plan-step { position: relative; background: var(--card); border: 1px solid rgba(242,234,216,.06); border-radius: var(--radius); padding: 28px 24px 24px; display: flex; flex-direction: column; gap: 12px; transition: border-color .3s, transform .3s; opacity: 0; transform: translateY(12px); }
+    .plan-step.revealed { animation: stepReveal .55s forwards ease-out; }
+    .plan-step:hover { border-color: rgba(212,146,42,.3); transform: translateY(-2px); }
+    .plan-step-num { font-family: var(--serif); font-size: 2.4rem; font-weight: 300; color: var(--amber); line-height: 1; opacity: .75; }
+    .plan-step-time { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+    .plan-step-title { font-family: var(--serif); font-size: 1.55rem; font-weight: 400; color: var(--cream); line-height: 1.25; }
+    .plan-step-desc { font-size: .92rem; color: var(--muted); line-height: 1.55; flex: 1; }
+    .plan-step-link { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--amber); text-decoration: none; font-weight: 500; margin-top: 4px; display: inline-flex; align-items: center; gap: 6px; line-height: 1; transition: color .2s, gap .2s; }
+    .plan-step-link:hover { color: var(--amber2); gap: 10px; }
+    .plan-step-link::after { content: '→'; display: inline-flex; align-items: center; line-height: 1; font-size: .95rem; transform: translateY(-1px); }
+    @keyframes stepReveal { to { opacity: 1; transform: none; } }
+
+    .plan-actions { margin-top: 32px; display: flex; gap: 14px; justify-content: center; align-items: center; flex-wrap: wrap; }
+    .plan-shuffle { background: transparent; color: var(--cream); border: 1px solid rgba(242,234,216,.18); font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; padding: 12px 22px; border-radius: 50px; cursor: pointer; transition: border-color .2s, background .2s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; line-height: 1; }
+    .plan-shuffle:hover { border-color: var(--amber); background: rgba(212,146,42,.06); }
+    .plan-shuffle-icon { font-size: 1rem; display: inline-flex; align-items: center; justify-content: center; line-height: 1; transition: transform .5s; }
+    .plan-shuffle:hover .plan-shuffle-icon { transform: rotate(180deg); }
+    .plan-get-app { background: var(--amber); color: #0C0907; font-weight: 500; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; padding: 12px 26px; border-radius: 50px; text-decoration: none; transition: background .25s, transform .2s; display: inline-flex; align-items: center; justify-content: center; gap: 8px; line-height: 1; }
+    .plan-get-app:hover { background: var(--amber2); transform: translateY(-1px); }
+    .plan-get-app-arrow { display: inline-flex; align-items: center; justify-content: center; line-height: 1; font-size: 1.05rem; transform: translateY(-1px); }
+
+    .plan-scenario { text-align: center; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
+    .plan-scenario strong { color: var(--amber); font-weight: 500; }
+
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
     @keyframes scrollPulse { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
 
@@ -223,6 +276,8 @@
       .how-grid { grid-template-columns: 1fr; gap: 52px; }
       .phone-wrap { display: none; }
       .psych-grid { grid-template-columns: 1fr; }
+      .plan-steps { grid-template-columns: 1fr; }
+      .plan-head { flex-direction: column; align-items: flex-start; }
       .urgency-strip { padding: 32px 28px; flex-direction: column; text-align: center; }
       .proof-stats { gap: 32px; }
       .proof-divider { display: none; }
@@ -259,12 +314,45 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
         Download Sauntera
       </a>
-      <a href="#how" class="btn-ghost">See how it works</a>
+      <a href="#plan-teaser" class="btn-ghost">Try it now</a>
     </div>
   </div>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
     <span>Scroll</span>
+  </div>
+</section>
+
+<!-- PLAN TEASER: interactive 3-step date plan -->
+<section id="plan-teaser">
+  <div class="plan-intro reveal">
+    <div class="plan-city-chip">Toronto · Tonight</div>
+    <h2 class="section-h2">See how <em>Sauntera plans</em><br>your next date.</h2>
+    <p class="section-sub">Tap the button. We'll draft a real Toronto date plan in seconds — just like the app does for any city.</p>
+  </div>
+
+  <div id="plan-cta-wrap" class="plan-cta-wrap reveal">
+    <button id="plan-cta-btn" type="button" class="plan-cta-btn">
+      Make me a plan for tonight
+    </button>
+    <div id="plan-loading" class="plan-loading">
+      <div class="plan-loading-dots"><span></span><span></span><span></span></div>
+      <div class="plan-loading-label">Drafting your night…</div>
+    </div>
+    <p class="plan-cta-hint">No signup · Takes 3 seconds</p>
+  </div>
+
+  <div id="plan-results" class="plan-results">
+    <p class="plan-scenario">Scenario · <strong id="plan-scenario-label">Saturday night in Toronto</strong></p>
+    <div class="plan-steps" id="plan-steps">
+      <!-- injected by JS -->
+    </div>
+    <div class="plan-actions">
+      <button type="button" class="plan-shuffle" id="plan-shuffle">
+        <span class="plan-shuffle-icon">↻</span> Try another
+      </button>
+      <a href="#cta" class="plan-get-app">Unlock 50+ in the app</a>
+    </div>
   </div>
 </section>
 
@@ -490,6 +578,98 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ── Interactive plan teaser ───────────────────────────────────────────
+  const PLAN_VARIANTS = [
+    {
+      label: 'Saturday night in Toronto',
+      steps: [
+        { time: '3:00 PM · Afternoon', title: 'Espresso at a Kensington hideaway', desc: 'Slow, sunlit, unhurried. Small roasters on side streets where the coffee is better than the crowd.', link: 'More Toronto cafes' },
+        { time: '5:30 PM · Golden hour', title: 'Stroll the Distillery District at sunset', desc: 'Cobblestones, string lights, and conversation. A built-in reason to walk shoulder-to-shoulder.', link: 'More golden-hour spots' },
+        { time: '7:30 PM · Dinner', title: 'Hidden Italian on Ossington', desc: 'Small room, handmade pasta, a waiter who remembers you next time. The kind of place you don\'t find on a map.', link: 'More hidden gems' },
+      ],
+    },
+    {
+      label: 'Rainy Sunday in Toronto',
+      steps: [
+        { time: '2:00 PM · Afternoon', title: 'Bookshop café in the Annex', desc: 'Wrap your hands around a matcha, thumb through novels, let the rain do its thing.', link: 'More cozy spots' },
+        { time: '4:30 PM · Indoor adventure', title: 'AGO on a quiet Sunday', desc: 'Half-full galleries, soft light, easy silences between rooms. Art is the conversation.', link: 'More cultural picks' },
+        { time: '7:00 PM · Dinner', title: 'Ramen counter on Dundas West', desc: 'Steam on the window, knees almost touching, the kind of warm food rainy days were made for.', link: 'More dinner ideas' },
+      ],
+    },
+    {
+      label: 'First date in Toronto',
+      steps: [
+        { time: '6:00 PM · Drinks', title: 'Low-key cocktails on Dundas', desc: 'Dim lighting, a seat at the bar, just two drinks deep — enough to talk, not enough to commit.', link: 'More first-date bars' },
+        { time: '7:30 PM · Activity', title: 'Board game café on College', desc: 'Built-in conversation starter. Pick a short game, laugh when you both lose track of the rules.', link: 'More playful dates' },
+        { time: '9:00 PM · Dessert', title: 'Gelato walk in Little Italy', desc: 'Stretch the evening without overcommitting. A cone and a stroll is its own second date.', link: 'More low-pressure ideas' },
+      ],
+    },
+  ];
+
+  const planCtaWrap   = document.getElementById('plan-cta-wrap');
+  const planCtaBtn    = document.getElementById('plan-cta-btn');
+  const planLoading   = document.getElementById('plan-loading');
+  const planResults   = document.getElementById('plan-results');
+  const planStepsEl   = document.getElementById('plan-steps');
+  const planScenario  = document.getElementById('plan-scenario-label');
+  const planShuffle   = document.getElementById('plan-shuffle');
+
+  let lastVariantIdx = -1;
+
+  function pickVariant() {
+    if (PLAN_VARIANTS.length === 1) return 0;
+    let idx;
+    do { idx = Math.floor(Math.random() * PLAN_VARIANTS.length); }
+    while (idx === lastVariantIdx);
+    lastVariantIdx = idx;
+    return idx;
+  }
+
+  function renderVariant(idx) {
+    const v = PLAN_VARIANTS[idx];
+    planScenario.textContent = v.label;
+    planStepsEl.innerHTML = v.steps.map((s, i) => `
+      <div class="plan-step" style="animation-delay:${0.08 + i * 0.12}s">
+        <div class="plan-step-num">0${i + 1}</div>
+        <div class="plan-step-time">${s.time}</div>
+        <h3 class="plan-step-title">${s.title}</h3>
+        <p class="plan-step-desc">${s.desc}</p>
+        <a href="#cta" class="plan-step-link">${s.link}</a>
+      </div>
+    `).join('');
+    // Trigger reveal animation on next frame so delays take effect
+    requestAnimationFrame(() => {
+      planStepsEl.querySelectorAll('.plan-step').forEach(el => el.classList.add('revealed'));
+    });
+  }
+
+  function generatePlan(initial) {
+    if (initial) {
+      // First click: hide CTA, show loader
+      planCtaBtn.style.display = 'none';
+      planLoading.classList.add('on');
+      setTimeout(() => {
+        planLoading.classList.remove('on');
+        planCtaWrap.classList.add('gone');
+        renderVariant(pickVariant());
+        planResults.classList.add('on');
+        // Smooth scroll into view so the user sees the full plan
+        planResults.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 1400);
+    } else {
+      // Shuffle: fade steps, re-render
+      planStepsEl.style.transition = 'opacity .25s';
+      planStepsEl.style.opacity = '0';
+      setTimeout(() => {
+        renderVariant(pickVariant());
+        planStepsEl.style.opacity = '1';
+      }, 260);
+    }
+  }
+
+  if (planCtaBtn) planCtaBtn.addEventListener('click', () => generatePlan(true));
+  if (planShuffle) planShuffle.addEventListener('click', () => generatePlan(false));
 </script>
 </body>
 </html>
